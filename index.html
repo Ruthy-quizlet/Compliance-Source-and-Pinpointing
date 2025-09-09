@@ -1,0 +1,303 @@
+// Quiz data structure
+const quizQuestions = [
+    {
+        question: "When creating an alert with multiple compliance sources, which should be listed first?",
+        options: [
+            "The most recent compliance source",
+            "The subject of the alert",
+            "The compliance source in alphabetical order",
+            "The Commonwealth compliance source"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When linking to Commonwealth legislation, you should link to:",
+        options: [
+            "The text page",
+            "The versions page",
+            "The landing page",
+            "The PDF version"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "For a Bill that is the subject of an alert, you should link to:",
+        options: [
+            "The Bill text itself",
+            "The Bill landing page",
+            "The Parliament website",
+            "The explanatory memorandum"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) with sections 21, 22, and 23 being amended, the correct pinpoint reference is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 21-23",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 21, 22, 23",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 21–23",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 21 to 23"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "When citing sections 9, 9A, 10, and 11 of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct format is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 9–11",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 9, 9A, 10, 11",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 9–19A–10–11",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 9, 9A–11"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "For Queensland legislation, the URL should contain:",
+        options: [
+            "\"latest\"",
+            "\"current\"",
+            "\"inforce\"",
+            "\"active\""
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing sections 15 through 19 of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct format is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 15–9",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 15–19",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 15, 16, 17, 18, 19",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 15 to 19"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing sections and schedules in the same reference, you should separate them with:",
+        options: [
+            "A comma",
+            "A semicolon",
+            "A colon",
+            "A dash"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When pinpointing provisions, you should:",
+        options: [
+            "Include subsections and sub-regulations",
+            "Only reference sections/regs/paras",
+            "Include all levels of the provision hierarchy",
+            "Only reference chapters and parts"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing the Water Management (General) Regulation 2025 (NSW), the correct reference for clause 11 is:",
+        options: [
+            "Water Management (General) Regulation 2025 (NSW) s 11",
+            "Water Management (General) Regulation 2025 (NSW) cl 11",
+            "Water Management (General) Regulation 2025 (NSW) reg 11",
+            "Water Management (General) Regulation 2025 (NSW) r 11"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing the Gaming Machine Amendment Regulation 2025 (Qld), the correct reference for section 11 is:",
+        options: [
+            "Gaming Machine Amendment Regulation 2025 (Qld) s 11",
+            "Gaming Machine Amendment Regulation 2025 (Qld) cl 11",
+            "Gaming Machine Amendment Regulation 2025 (Qld) reg 11",
+            "Gaming Machine Amendment Regulation 2025 (Qld) r 11"
+        ],
+        correctAnswer: 0
+    },
+    {
+        question: "For provisions that are being repealed in their entirety, you should:",
+        options: [
+            "Pinpoint them with a special notation",
+            "Not pinpoint them at all",
+            "Pinpoint them with an asterisk",
+            "Pinpoint them with a footnote"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing Schedule 3 of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct format is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Schedule 3",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Sch 3",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) S3",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Sch. 3"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing items within Schedule 2, you should:",
+        options: [
+            "Include all item numbers",
+            "Only include the first and last item numbers",
+            "Not include item numbers at all",
+            "Include only the most significant item numbers"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "For an instrument with staggered commencement dates, you should pinpoint:",
+        options: [
+            "All sections that will eventually be amended",
+            "Only sections amended by currently commencing provisions",
+            "All sections regardless of commencement date",
+            "No sections until all provisions have commenced"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When linking an alert to obligations, you should always link to:",
+        options: [
+            "The core obligation folder",
+            "The sub-obligation folder",
+            "The Notifications folder",
+            "The root module folder"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "When citing the Building (Product Certification) Amendment Regulations 2025 (NZ), the jurisdiction should be:",
+        options: [
+            "Included outside the hyperlink",
+            "Included inside the hyperlink",
+            "Omitted entirely",
+            "Placed at the beginning of the citation"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing multiple chapters of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct abbreviation is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Chapters 3–5",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Ch 3–5",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Chs 3–5",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) C 3–5"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "When citing multiple parts of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct abbreviation is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Parts 3–5",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Pt 3–5",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Pts 3–5",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) P 3–5"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "When citing changes to only the heading of a provision, you should:",
+        options: [
+            "Pinpoint the heading specifically",
+            "Pinpoint the section containing the heading",
+            "Not pinpoint at all",
+            "Pinpoint with a special notation"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "When citing sections 11, 15, and 20 along with Schedule 1 of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct format is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 11, 15, 20, Sch 1",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 11, 15, 20; Sch 1",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 11, 15, 20: Sch 1",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 11, 15, 20 and Sch 1"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing a provision that is partially repealed (e.g., subsection 3 of section 15), you should:",
+        options: [
+            "Not pinpoint it",
+            "Pinpoint to the section level (s 15)",
+            "Pinpoint to the subsection level (s 15(3))",
+            "Use a special notation"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing Division 2 of Part 1 of Chapter 1 of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct format is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Div 2",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Ch 1 Pt 1 Div 2",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Div 2 Pt 1 Ch 1",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) Ch 1, Pt 1, Div 2"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When cloning an alert to another module, you must:",
+        options: [
+            "Keep the same title",
+            "Update the title with a unique code for the target module",
+            "Remove the title completely",
+            "Use a generic title"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When linking obligations, the rule to follow is:",
+        options: [
+            "one core, one obligation applies",
+            "Link to all sub-obligations",
+            "one core, one sub obligation applies",
+            "Link to all affected obligations"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "When citing multiple clauses of the Water Management (General) Regulation 2025 (NSW), the correct abbreviation is:",
+        options: [
+            "Water Management (General) Regulation 2025 (NSW) regs 3–5",
+            "Water Management (General) Regulation 2025 (NSW) reg 3–5",
+            "Water Management (General) Regulation 2025 (NSW) cls 3–5",
+            "Water Management (General) Regulation 2025 (NSW) cll 3–5"
+        ],
+        correctAnswer: 3
+    },
+    {
+        question: "When citing sections with a gap in sequence (e.g., sections 10, 12, and 14), the correct format is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10–14",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10, 12, 14",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10...14",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10 et seq."
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing multiple rules of the Building (Product Certification) Amendment Regulations 2025 (NSW), the correct abbreviation is:",
+        options: [
+            "Building (Product Certification) Amendment Regulations 2025 (NSW) rules 3–5",
+            "Building (Product Certification) Amendment Regulations 2025 (NSW) rule 3–5",
+            "Building (Product Certification) Amendment Regulations 2025 (NSW) r 3–5",
+            "Building (Product Certification) Amendment Regulations 2025 (NSW) rr 3–5"
+        ],
+        correctAnswer: 3
+    },
+    {
+        question: "When citing multiple paragraphs, the correct abbreviation is:",
+        options: [
+            "para 3–5",
+            "paras 3–5",
+            "p 3–5",
+            "ps 3–5"
+        ],
+        correctAnswer: 1
+    },
+    {
+        question: "When citing sections 10, 15, and 25 along with Schedules 1 and 2 of the Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth), the correct format is:",
+        options: [
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10, 15, 25, Schs 1, 2",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10, 15, 25; Schs 1, 2",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10, 15, 25: Schs 1, 2",
+            "Health Legislation Amendment (Improved Medicare Integrity and Other Measures) Act 2025 (Cth) ss 10, 15, 25 and Schs 1, 2"
+        ],
+        correctAnswer: 1
+    }
+];
